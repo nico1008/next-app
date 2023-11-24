@@ -42,15 +42,19 @@ export const Content = styled.div`
     }
 `;
 
+export const TopRow = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 50px 0px;
+`;
+
+
 export const ContentTitle = styled.span`
     letter-spacing: 1px;
     font-weight: 500;
-    display: flex;
     flex: 0 0 auto;
-    width: 100%;
-    margin: 50px 0px;
-    align-items: center;
-    box-sizing: border-box;
     font-size: ${props => props.theme.textSizeTitle};
     @media (max-width: 768px) and (min-width: 576px)  {
         font-size: ${props => props.theme.textSizeTitle700};
@@ -58,13 +62,13 @@ export const ContentTitle = styled.span`
     @media (max-width: 576px)  {
         font-size: ${props => props.theme.textSizeTitle500};
     }
-    & a{
+    & a {
         font-family: Roboto;
-        font-size:  ${props => props.theme.textSizeTitle};
+        font-size: ${props => props.theme.textSizeTitle};
         font-weight: 500;
         letter-spacing: 1px;
         transition: 0.3s;
-        &:hover{
+        &:hover {
             transition: 0.3s;
             color: ${props => props.theme.accentColor1};
         }
@@ -76,10 +80,10 @@ export const Data = styled.div`
     width: 100%;
     align-items: center;
     align-self: center;
-    grid-template-columns: 1fr 2fr ;
+    grid-template-columns: 1.5fr 1fr ;
     grid-gap: 20px;
-    border-top: 1px solid ${props => props.theme.accentColor1};
-    border-bottom: 1px solid ${props => props.theme.accentColor1};
+    border-top: 2px solid ${props => props.theme.accentColor1};
+    border-bottom: 2px solid ${props => props.theme.accentColor1};
     padding: 20px 0px;
     box-sizing: border-box; 
     @media (min-width: 1200px){   
@@ -131,7 +135,6 @@ export const Buttons = styled.div`
     @media (max-width: 576px)  {
         grid-template-columns: 1fr  ;
     }
-
 `;
 
 export const Button = styled.a`
@@ -175,15 +178,13 @@ export const Title = styled.div`
 `;
 
 export const Year = styled.div`
-    display: flex;
-    width: 100%;
     flex: 0 0 auto;
     font-weight: 600;
-    font-size: ${props=> props.theme.textSizeTextL};
-    color: ${props=> props.theme.textColor};
-
-
+    font-size: ${props => props.theme.textSizeTextL};
+    color: ${props => props.theme.textColor};
+    text-transform: uppercase;
 `;
+
 export const DescriptionFull = styled.div`
     display: flex;
     width: 100%;
@@ -218,6 +219,15 @@ export const Statistic = styled.div`
 `;
 
 export const TorrentsTitle = styled.div`
+    display: flex;
+    width: 100%;
+    flex: 0 0 auto;
+    font-weight: 600;
+    font-size: ${props=> props.theme.textSizeTextL};
+    color: ${props=> props.theme.textColor};
+`;
+
+export const DescriptionTitle = styled.div`
     display: flex;
     width: 100%;
     flex: 0 0 auto;
@@ -262,11 +272,22 @@ export const OtherMoviesText = styled.div`
     display: flex;
     font-size: ${props=> props.theme.textSizeTitle};
     letter-spacing: 1px;
-    font-weight: 600;
+    font-weight: 700;
     width: 100%;
     justify-content: center;
-    margin: 20px 0px 00px 0px;
+    margin: 30px 0px 30px 0px;
     text-align: center;
+`;
+
+export const UserCommentsText = styled.div`
+    display: flex;
+    font-size: ${props=> props.theme.textSizeTitle};
+    letter-spacing: 1px;
+    font-weight: 700;
+    width: 100%;
+    justify-content: start;
+    margin: 30px 0px 30px 0px;
+    text-align: start;
 `;
 
 export const SorryText = styled.div`

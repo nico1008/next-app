@@ -56,7 +56,6 @@ const currentMovieGenres = filmRetrieve?.data.movie.genres || [];
   </Style.RelatedMovies>
   
   
-
   if (isLoading) {
     return <Loader />;
   }
@@ -85,38 +84,28 @@ const currentMovieGenres = filmRetrieve?.data.movie.genres || [];
       </Style.BackgroundImage>
 
       <Style.Content>
-        <Style.ContentTitle>
-          <Link href={"/"}>Movies / {filmRetrieve?.data.movie.title}</Link>
-        </Style.ContentTitle>
+        <Style.TopRow>
 
-        <Style.Data>
-          
-          <Style.Image>
-            <Style.Img
-              src={filmRetrieve?.data.movie.large_cover_image}
-            ></Style.Img>
-            <Style.Buttons>
-              <Style.DownloadButton href={filmRetrieve?.data.movie.url}>
-                Download
-              </Style.DownloadButton>
-              <Style.WatchButton href={filmRetrieve?.data.movie.url}>
-                Watch Now
-              </Style.WatchButton>
-            </Style.Buttons>
-          </Style.Image>
+          <Style.ContentTitle>
+            <Link href={"/"}>Movies / {filmRetrieve?.data.movie.title}</Link>
+          </Style.ContentTitle>
+
+          <Style.Year>
+            <Link href={"/"}>{filmRetrieve?.data.movie.year + " " + filmRetrieve?.data.movie.language}</Link>
+            </Style.Year>
+
+        </Style.TopRow>
+
+
+        <Style.Data>        
 
           <Style.Description>
-            
-            <Style.Year>
-              {filmRetrieve?.data.movie.year +
-                " " +
-                filmRetrieve?.data.movie.language}
-            </Style.Year>
 
             <Style.Genres>{genresList}</Style.Genres>
 
+            <Style.DescriptionTitle>Movie descrption:</Style.DescriptionTitle>
             <Style.DescriptionFull>
-              {filmRetrieve?.data.movie.description_full || 'No description available'}
+              {filmRetrieve?.data.movie.description_full || 'No description available, sorry :('}
             </Style.DescriptionFull>
 
             <Style.Statistic>
@@ -142,7 +131,25 @@ const currentMovieGenres = filmRetrieve?.data.movie.genres || [];
 
             <Style.Torrents>{torrentsList}</Style.Torrents>
           </Style.Description>
+
+          <Style.Image>
+            <Style.Img
+              src={filmRetrieve?.data.movie.large_cover_image}
+            ></Style.Img>
+            <Style.Buttons>
+              <Style.DownloadButton href={filmRetrieve?.data.movie.url}>
+                Download
+              </Style.DownloadButton>
+              <Style.WatchButton href={filmRetrieve?.data.movie.url}>
+                Watch Now
+              </Style.WatchButton>
+            </Style.Buttons>
+          </Style.Image>
+
         </Style.Data>
+        <Style.UserCommentsText>
+          User comments:
+        </Style.UserCommentsText>
 
         <Style.OtherMoviesText>
           You might also like:
