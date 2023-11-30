@@ -20,7 +20,7 @@ const Films = () => {
     <Style.Films>
       <Style.Content>
 
-          <Style.GenresF>
+          {/* <Style.GenresF>
 
           <Style.Title>Action</Style.Title>
           <Style.Title>Drama</Style.Title>
@@ -29,7 +29,7 @@ const Films = () => {
           <Style.Title>Family</Style.Title>
           <Style.Title>Comedy</Style.Title>
           
-          </Style.GenresF>
+          </Style.GenresF> */}
 
         <Style.List>{filmsList}</Style.List>
 

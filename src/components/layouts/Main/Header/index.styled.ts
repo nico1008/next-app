@@ -109,10 +109,10 @@ export const Name1 = styled.span`
     padding: 4px 4px 4px 8px;
     background-color: #292929;
     @media (max-width: 768px) and (min-width: 576px)  {
-        font-size: ${props => props.theme.textSizeTextM500};
+        font-size: 20px;
     }
     @media (max-width: 576px)  {
-        font-size: ${props => props.theme.textSizeTextM500};
+        font-size: 20px;
     }
 `;
 
@@ -131,10 +131,10 @@ export const Name2 = styled.span`
     padding: 4px 4px 4px 4px;
     background-color: #ffa31a;
     @media (max-width: 768px) and (min-width: 576px)  {
-        font-size: ${props => props.theme.textSizeTextM500};
+        font-size: 20px;
     }
     @media (max-width: 576px)  {
-        font-size: ${props => props.theme.textSizeTextM500};
+        font-size: 20px;
     }
 `;
 

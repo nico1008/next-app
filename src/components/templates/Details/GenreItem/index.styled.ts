@@ -2,16 +2,18 @@ import styled from 'styled-components';
 
 export const GenreItem = styled.div`
     width:100%;
-    height: 30px;
+    height: 40px;
     display: flex;
+    letter-spacing: 1px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: ${props => props.theme.iconColor};
     box-shadow: 0px 0px 5px ${props => props.theme.shadowColor};
     font-size: ${props => props.theme.textSizeTextL};
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: ${props => props.theme.accentColor1};
+    text-transform: uppercase
 `;
 
 export const Text = styled.span`

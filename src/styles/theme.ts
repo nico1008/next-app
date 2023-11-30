@@ -21,7 +21,7 @@ export const darkTheme = {
   SwitcherColor2: "#48cae4",
 
   iconColor: "#03045e",
-  CardColor: "#02c39a",
+  CardColor: "#22526e",
   
   shadowColor: "rgba(0,0,0,0.2)",
 
@@ -37,8 +37,8 @@ export const darkTheme = {
 
   textSizeTextM: "16px",
   textSizeTextM900: "14px",
-  textSizeTextM700: "14px",
-  textSizeTextM500: "25px",
+  textSizeTextM700: "13px",
+  textSizeTextM500: "11px",
 
   textSizeTextS: "12px",
   textSizeTextS900: "10px",
@@ -75,7 +75,7 @@ export const lightTheme = {
 
 
   iconColor: "#48cae4",
-  CardColor: "#02c39a",
+  CardColor: "#dcf5fa",
 
   shadowColor: "rgba(0,0,0,0.2)",
 
@@ -91,8 +91,8 @@ export const lightTheme = {
 
   textSizeTextM: "16px",
   textSizeTextM900: "14px",
-  textSizeTextM700: "14px",
-  textSizeTextM500: "25px",
+  textSizeTextM700: "13px",
+  textSizeTextM500: "11px",
 
   textSizeTextS: "12px",
   textSizeTextS900: "10px",

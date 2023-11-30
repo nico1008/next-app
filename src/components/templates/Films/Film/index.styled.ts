@@ -44,7 +44,7 @@ export const RatingText = styled.div`
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: ${props=> props.theme.textSizeTextM500};
+    font-size: 20px;
 `;
 
 export const Genres = styled.div`

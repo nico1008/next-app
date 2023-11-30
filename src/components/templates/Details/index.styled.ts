@@ -19,42 +19,46 @@ export const Content = styled.div`
     box-sizing: border-box;
     z-index: 1;
     background-color: ${props => props.theme.backgroundColor2};
-    @media (min-width: 1200px){
+    @media (min-width: 1200px) {
         width: 1400px;
     }
-    @media (max-width: 1200px) and (min-width: 992px)  {
+    @media (max-width: 1200px) and (min-width: 992px) {
         width: 100%;
     }
-    @media (max-width: 992px) and (min-width: 768px)  {
-        padding: 0px 20px;   
+    @media (max-width: 992px) and (min-width: 768px) {
+        padding: 0px 20px;
         margin: 0px 0px;
         width: 100%;
     }
-    @media (max-width: 768px) and (min-width: 576px)  { 
-        padding: 0px 20px;   
+    @media (max-width: 768px) and (min-width: 576px) {
+        padding: 0px 20px;
         margin: 0px 0px;
         width: 100%;
     }
-    @media (max-width: 576px)  {
+    @media (max-width: 576px) {
         padding: 0px 20px;
         margin: 0px 0px;
         width: 100%;
     }
 `;
 
-export const TopRow = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 50px 0px;
-`;
 
+export const TopRow = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 50px 0;
+
+    @media (max-width: 768px) and (min-width: 576px) {
+        grid-template-columns: 1fr 1fr;
+    }
+`;
 
 export const ContentTitle = styled.span`
     letter-spacing: 1px;
     font-weight: 500;
-    flex: 0 0 auto;
     font-size: ${props => props.theme.textSizeTitle};
     @media (max-width: 768px) and (min-width: 576px)  {
         font-size: ${props => props.theme.textSizeTitle700};
@@ -63,7 +67,7 @@ export const ContentTitle = styled.span`
         font-size: ${props => props.theme.textSizeTitle500};
     }
     & a {
-        font-family: Roboto;
+        
         font-size: ${props => props.theme.textSizeTitle};
         font-weight: 500;
         letter-spacing: 1px;
@@ -123,12 +127,13 @@ export const Img = styled.img`
     transition: 0.5s;
     box-shadow: 0px 3px 5px ${props=>props.theme.shadowColor};;
     margin: 0px 0px 20px 0px;
+    border-radius: 5px;
 `;
 
 export const Buttons = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 10px;
     @media (max-width: 768px) and (min-width: 576px)  {
         grid-template-columns: 1fr  ;
     }
@@ -141,13 +146,12 @@ export const Button = styled.a`
     cursor: pointer;
     display: flex;
     width: 100%;
-    height: 40px;
+    height: 49px;
     align-items: center;
     justify-content: center;
     color:white;
-    background-color: aqua;
     border: 0px;
-    border-radius:10px;
+    border-radius: 5px;
     font-size: ${props=>props.theme.textSizeTextM};
     &:hover{
         opacity: 0.9;
@@ -178,43 +182,55 @@ export const Title = styled.div`
 `;
 
 export const Year = styled.div`
-    flex: 0 0 auto;
     font-weight: 600;
+    text-transform: uppercase;
     font-size: ${props => props.theme.textSizeTextL};
     color: ${props => props.theme.textColor};
-    text-transform: uppercase;
+    justify-self: end; 
+    &:hover {
+        transition: 0.3s;
+        color: ${props => props.theme.accentColor1};
+    }
 `;
 
 export const DescriptionFull = styled.div`
     display: flex;
     width: 100%;
+    height: 471px;
+    overflow: auto;
     font-size: ${props=> props.theme.textSizeTextL};
     letter-spacing: 1px;
     text-align: justify;
+    @media (max-width: 576px)  {
+        height: 100%;
+    }
 `;
 
 export const Genres = styled.div`
     display: grid;
     font-size: ${props=> props.theme.textSizeTextM};
     grid-template-columns: repeat(5,1fr);
-    grid-gap:10px;
+    grid-gap: 10px;
     @media (max-width: 768px) and (min-width: 576px)  {
-        grid-template-columns: 1fr  ;
+        grid-template-columns: 1fr 1fr  ;
     }
     @media (max-width: 576px)  {
-        grid-template-columns: 1fr  ;
+        grid-template-columns: 1fr 1fr ;
     }
 `;
 
 export const Statistic = styled.div`
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap:20px;
-    @media (max-width: 768px) and (min-width: 576px)  {
-        grid-template-columns: 1fr 1fr  1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    justify-items: center; 
+
+    @media (max-width: 768px) and (min-width: 576px) {
+        grid-template-columns: repeat(4, 1fr); 
     }
-    @media (max-width: 576px)  {
-        grid-template-columns: 1fr 1fr  ;
+
+    @media (max-width: 576px) {
+        grid-template-columns: repeat(2, 1fr);
     }
 `;
 
@@ -238,8 +254,11 @@ export const DescriptionTitle = styled.div`
 
 export const Torrents = styled.div`
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    @media (max-width: 576px)  {
+        grid-template-columns: 1fr  ;
+    }
 `;
 
 export const RelatedMovies = styled.div`
@@ -299,4 +318,76 @@ export const SorryText = styled.div`
     justify-content: center;
     margin: 20px 0px 00px 0px;
     text-align: center;
+`;
+
+
+export const CommentSection = styled.div`
+  margin:15px;
+  margin-bottom: 24px;
+  
+  
+`;
+
+export const CommentForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  
+`;
+
+export const UserNameInput = styled.input`
+  display: flex;
+  flex-direction: column;
+  margin: 10px;    
+  font-size: ${props=> props.theme.textSizeTextL700};
+`;
+
+export const CommentTextarea = styled.textarea`
+  margin-bottom: 8px;
+  border-radius: 4px;
+  resize: none;
+`;
+
+export const CommentSubmitButton = styled.button`
+  background-color: #ffa31a;
+  width: auto;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-family: Roboto;
+  font-size: ${(props) => props.theme.textSizeTextM};
+  margin: 0 auto; 
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #ff8d1a;
+    scale:1.05;
+  }
+`;
+
+export const CommentText = styled.ul`
+  font-weight: 500;
+  list-style: none;
+  padding: 0;  
+  font-size: ${props=> props.theme.textSizeTextL700};
+`;
+
+export const CommentItem = styled.div`
+  background-color: ${props=> props.theme.CardColor};
+  padding: 8px 20px 8px 20px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+`;
+export const UserInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  
+`;
+export const TextArea = styled.textarea`
+  width: 99.5%;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
 `;
