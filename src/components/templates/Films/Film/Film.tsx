@@ -1,36 +1,25 @@
 import { MovieList } from "@/lib/api";
 import Link from "next/link";
 import React from "react";
-import { FaStar  } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import * as Style from "./index.styled";
 import { FaFilm } from "react-icons/fa";
 
-
 const Film: React.FC<MovieList> = (props) => {
   return (
-    
     <Style.Film>
       <Link href={`/films/${props.id}`}>
-          
         <Style.Content>
           <Style.TextContainer>
-
-            <Style.Text1>
-              {props.year} 
-            </Style.Text1>
-
+            <Style.Text1>{props.year}</Style.Text1>
             <Style.IconContrainer>
               <FaFilm />
-            </Style.IconContrainer>            
-            
-            <Style.Text2>
-              {props.language} 
-            </Style.Text2>
-
+            </Style.IconContrainer>
+            <Style.Text2>{props.language}</Style.Text2>
           </Style.TextContainer>
-          
-          <Style.Cards>            
-            <Style.Card1            
+
+          <Style.Cards>
+            <Style.Card1
               src={
                 props.medium_cover_image
                   ? props.medium_cover_image
@@ -40,7 +29,6 @@ const Film: React.FC<MovieList> = (props) => {
             ></Style.Card1>
 
             <Style.Card2>
-             
               {props.genres ? (
                 <Style.Genres>
                   {0 in props.genres ? (
@@ -71,9 +59,13 @@ const Film: React.FC<MovieList> = (props) => {
 
               <Style.Rating>
                 <Style.RatingIcon>
-                  <FaStar />
+                {typeof props.rating === 'number' && !isNaN(props.rating) &&
+                [...Array(Math.floor(props.rating))].map((_, index) => (
+                  <FaStar key={index} />
+                ))
+}
                 </Style.RatingIcon>
-                <Style.RatingText> {props.rating} / 10</Style.RatingText>
+                <Style.RatingText>{props.rating} / 10</Style.RatingText>
               </Style.Rating>
 
               <Style.Details>DETAILS</Style.Details>
@@ -81,8 +73,6 @@ const Film: React.FC<MovieList> = (props) => {
           </Style.Cards>
 
           <Style.Name>{props.title}</Style.Name>
-
-          
         </Style.Content>
       </Link>
     </Style.Film>

@@ -332,6 +332,7 @@ export const CommentForm = styled.form`
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+  font-size: 20px;
   
 `;
 
@@ -391,3 +392,5 @@ export const TextArea = styled.textarea`
   border: 1px solid #ccc;
   margin-bottom: 8px;
 `;
+
+

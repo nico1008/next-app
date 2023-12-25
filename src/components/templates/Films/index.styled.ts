@@ -47,7 +47,7 @@ export const GenresF = styled.div`
     flex-direction: row;
     align-items: center;
     text-align: center;
-    margin: 10px 0px;
+    margin: 20px 0px;
     @media (max-width: 768px) and (min-width: 576px)  {
         grid-template-columns: 1fr 1fr  ;
     }

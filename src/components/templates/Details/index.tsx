@@ -74,6 +74,7 @@ useEffect(() => {
     </Style.SorryText>
   ) : null;
   ///////////////////////////////////////
+  ///////////////////////////////////////
 
   const genresList = filmRetrieve?.data.movie.genres.map((value) => (
     <GenreItem key={value} text={value} />
@@ -90,6 +91,7 @@ useEffect(() => {
       />
     );
   });
+
   ///////////////////////////////////////
 
   
@@ -101,18 +103,18 @@ useEffect(() => {
     function addComment(event: React.FormEvent<HTMLFormElement>) {
       event.preventDefault();
       if (userName.trim() !== '' && commentText.trim() !== '') {
-        const currentDate = new Date().toLocaleDateString();
+        const currentTime = new Date().toLocaleTimeString(); 
         const newComment: CommentProps = {
           id: comments.length + 1,
           userName: userName,
           commentText: commentText,
-          time:currentDate,
+          time: currentTime, // Updated to current time
         };
         setComments([...comments, newComment]);
         setUserName('');
         setCommentText('');
       } else {
-        alert('Please enter both your user name and comment before submitting.');
+        alert('Please enter both your username and comment before submitting.');
       }
     }
 
@@ -144,20 +146,22 @@ useEffect(() => {
               <Style.UserNameInput
                 value={userName}
                 onChange={handleUserNameChange}
+                placeholder="Enter your username" 
               />
             </Style.UserInfo>
 
             <Style.TextArea
               value={commentText}
               onChange={(e) => handleCommentTextChange(e)}
+              placeholder="Write a comment" 
             />
           
           <Style.CommentSubmitButton>SUBMIT COMMENT</Style.CommentSubmitButton>
         </Style.CommentForm >
-    
+        
         {commentItems}
       </Style.CommentSection>
-    );
+      );
   }
    
   return (
@@ -186,7 +190,7 @@ useEffect(() => {
 
             <Style.Genres>{genresList}</Style.Genres>
 
-            <Style.DescriptionTitle>Movie Descrption</Style.DescriptionTitle>
+            <Style.DescriptionTitle>Movie Description</Style.DescriptionTitle>
             <Style.DescriptionFull>
               {filmRetrieve?.data.movie.description_full || 'No description available, sorry :('}
             </Style.DescriptionFull>

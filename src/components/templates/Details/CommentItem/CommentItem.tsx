@@ -24,11 +24,9 @@ const CommentItem: React.FC<CommentProps & {
   return (
     <Style.CommentItem>
       <Style.CommentContent>
-      <Style.UserName>
-        {"User "}
-        <span className="highlightedUserName">{userName}</span>
-        {" commented at " + time + ":"}
-      </Style.UserName>
+        <Style.UserName>
+          {"User"} <span className="highlightedUserName" style={{ fontWeight: 'bold' }}>{userName}</span> {"commented at " + time + ":"}
+        </Style.UserName>
       </Style.CommentContent>
       <Style.CommentContent>
         <Style.CommentText>{commentText}</Style.CommentText>

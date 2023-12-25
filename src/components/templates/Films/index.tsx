@@ -20,16 +20,16 @@ const Films = () => {
     <Style.Films>
       <Style.Content>
 
-          {/* <Style.GenresF>
-
-          <Style.Title>Action</Style.Title>
-          <Style.Title>Drama</Style.Title>
-          <Style.Title>Horror</Style.Title>
-          <Style.Title>Romance</Style.Title>
-          <Style.Title>Family</Style.Title>
-          <Style.Title>Comedy</Style.Title>
+          <Style.GenresF>
+{/* 
+          // <Style.Title>Action</Style.Title>
+          // <Style.Title>Drama</Style.Title>
+          // <Style.Title>Horror</Style.Title>
+          // <Style.Title>Romance</Style.Title>
+          // <Style.Title>Family</Style.Title>
+          // <Style.Title>Comedy</Style.Title> */}
           
-          </Style.GenresF> */}
+          </Style.GenresF> 
 
         <Style.List>{filmsList}</Style.List>
 

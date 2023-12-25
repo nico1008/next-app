@@ -47,8 +47,9 @@ export const UserName = styled.div`
     }
     .highlightedUserName {
         color: ${props => props.theme.WhiteAndBlack}
-        font-weight: bold; 
-        padding:0px 3px 0px 3px;
+        font-weight: bold;
+        padding:0px 7px 0px 7px;
+        text-transform: uppercase; 
     }
 `;
 
@@ -56,6 +57,5 @@ export const deleteButton = styled.div`
     cursor: pointer;
     display: flex;
     flex: 0 0 auto;
-    font-size: 24px; 
-    
+    font-size: 24px;     
 `;
